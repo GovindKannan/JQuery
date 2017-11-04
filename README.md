@@ -9,24 +9,35 @@ Pre-requisites:
 * Basic understanding on CSS
 
 
-Lesson 3: Traversing through DOM Tree
+Lesson 4: Add / Remove elements using JQuery
 
-In this lesson we will understand how to traverse through DOM tree to access different elements.
+We will learn about the different JQuery methods that can be used to add contents dynamically in our application view.
+* append(): adds content to the bottom of the element.
+  * -----$("#id").append("<h1>some text</h1>")
+* prepend(): adds content to top of the element.
+  * -----$("#id").prepend("<h1>some text</h1>")
+* before(): adds content before element as a new node.
+  * -----$("#id").append("<h1>some text</h1>")
+* after(): adds content after the element as a new node.
+  * -----$("#id").after("<h1>some text</h1>")
+* html(): Changes teh whole html of the element.
+  * -----$("#id").html("<h1>some text</h1>")
+* text(): Changes the text of an element.
+  * -----$("#id").text("some text")
 
-* $("#element-id").next() will fetch the next element in the tree.
-* $("#element-id").prev() will fetch the previous element.
-* $("#element-id").parent() will fetch the parent of the current element.
-* $("#element-id").parents() will fetch all the parents of the element in the dom tree.
-* $("#element-id").children() will fetch all the childrens of the current element.
-* $("#element-id").find(".class-name") finds all elements with the class name attribute provided.
-* $("#element-id").closest(".class-name") find the closest dom element having the class name provided.
+Now we will focus on how to remove elements from dom using JQuery.
+* empty(): This will remove all the contents inside the tag
+  * -----$("#id").empty();
+
+* remove(): This will delete the element itself instead of clearing the contents inside.
+  * -----$("#id").remove();
 
 
-Chaining in JQuery:
+Wrapping and Unwrapping of elements
 
-We can use the above methods to create a chain where one statement updates multiple elements
-* eg: $("#current-element-id").css(border:"2px solid red")
-
-          .next().css(color: "red")
-
-          .closest("H1").css(color:"blue");
+* wrap(): Box an element with in another Tag.
+  * ----$("#id").wrap("<just opening Tag>");
+* unwrap(): Unbox an element from its immediate parent.
+  * ----$("#id").unwrap();
+* wrapAll(): wraps all of the elements in a single tag.
+  * ----$("section").wrapAll("<opening tag>");
